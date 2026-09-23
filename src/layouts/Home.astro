@@ -1,0 +1,32 @@
+---
+import '../styles/home.css';
+import Header from '../components/Header.astro';
+import FeaturedArticle from '../components/FeaturedArticle.astro';
+import Categories from '../components/Categories.astro';
+import RecentPosts from '../components/RecentPosts.astro';
+import Footer from '../components/Footer.astro';
+const {title = "Riana's Blog"} = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<!-- <slot /> -->
+		 <Header />
+        <div class="sub-header">A deep dive into the projects I've built, the tools I love, and all the things that inspire me.</div>
+        <FeaturedArticle />
+	 	<Categories />
+	   	<RecentPosts />
+		<div class="all-posts">
+			<a href="/posts/all"><button>all posts</button></a>
+		</div>
+		<Footer />
+	</body>
+</html>

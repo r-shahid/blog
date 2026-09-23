@@ -1,0 +1,116 @@
+.sub-header {
+  text-align: right;
+  margin-top: 40px;
+  margin-bottom: 8px;
+  font-style: italic;
+  font-size: clamp(0.4rem, 0.3rem + 2vw, 1.1rem);
+}
+
+article.featured {
+  border: 3px solid black;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 400px;
+}
+article.featured .info {
+  grid-column: span 1;
+  padding: 40px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+article.featured .info .title {
+  /* border: 1px solid black; */
+  font-size: clamp(1.6rem, 1.5rem + 2vw, 2.3rem);
+  margin-bottom: 30px;
+}
+article.featured .info .preview {
+  /* border: 1px solid black; */
+  font-size: clamp(0.3rem, 0.2rem + 2vw, 1.1rem);
+  margin-bottom: 30px;
+}
+article.featured .info .preview a {
+  font-weight: 600;
+  font-style: italic;
+}
+article.featured .info button {
+  background-color: unset;
+  border: 3px solid black;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: clamp(0.5rem, 0.4rem + 2vw, 1.3rem);
+  font-weight: 600;
+}
+article.featured img {
+  grid-column: span 2;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: 50% 80%;
+}
+
+.category-section h2,
+.recent-section h2 {
+  font-size: clamp(1.6rem, 1.5rem + 2vw, 2.3rem);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.categories {
+  display: flex;
+  gap: 16px;
+}
+.category, .all-posts button {
+  border: 3px solid black;
+  font-size: clamp(0.5rem, 0.4rem + 2vw, 1.2rem);
+  text-transform: uppercase;
+  padding: 4px 8px;
+}
+
+.recent-section .posts {
+  display: flex;
+  flex-direction: row;
+  /* gap: 24px */
+  justify-content: space-between;
+    /* display: gri`; */
+}
+.recent-section .posts .article {
+  border: 3px solid black;
+  width: 31%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  padding: 16px;
+}
+.recent-section .posts .article img {
+  width: 100%;
+  height: 50%;
+  min-height: 0;
+  object-fit: cover;
+}
+.recent-section .posts .article .title{
+      font-size: clamp(0.7rem, 0.6rem + 2vw, 1.4rem);
+      text-transform: uppercase;
+      /* text-align: left; */
+}
+.recent-section .posts .article .desc {
+    margin-bottom: 24px;
+}
+.recent-section .posts .article button {
+    width: 30%;
+  background-color: unset;
+}
+
+.all-posts{
+    text-align: center;
+    padding: 40px;
+}
+.all-posts button {
+    background-color: unset;
+    cursor: pointer;
+}
+
