@@ -4,6 +4,7 @@ topic: Coding
 description: "This is the inaugural post for this site. "
 pubDate: 10/23/2026
 heroImage: /media/beach.jpg
+imgAlt: view of the beach
 ---
 This is my first post ever! If this is all set up right, I should be able to work on setting up the categories functionality and from there make sure all the links work on the site. Once that is in place, I'll write up a lot more posts and fully populate the site. 
 
