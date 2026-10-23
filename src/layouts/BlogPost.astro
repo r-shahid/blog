@@ -5,7 +5,8 @@ import Categories from '../components/Categories.astro';
 import RecentPosts from '../components/RecentPosts.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-const {title = "Riana's Blog"} = Astro.props;
+const { frontmatter} = Astro.props;
+const {title, topic, description, pubDate, heroImage, imgAlt} = frontmatter;
 ---
 
 <html lang="en">
@@ -22,14 +23,13 @@ const {title = "Riana's Blog"} = Astro.props;
          <Header />
          <div class="blogpost">
          <div class="title">
-            <img src="/img.jpg" />
-             <h2 class="post-title">Blog Post Title</h2>
+            <img src={heroImage} alt={imgAlt}/>
+             <h2 class="post-title">{title}</h2>
          </div>
-         <div class="category"><button >topic</button></div>
+         <div>{pubDate}</div>
+         <div class="category"><button >{topic}</button></div>
          <div class="post-body">
-            Your paragraph text Your paragrYour paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text aph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text 
-
-Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text aph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph text Your paragraph
+            <slot />
          </div>
          </div>
          <Footer />
