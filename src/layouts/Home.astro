@@ -1,5 +1,5 @@
 ---
-import '../styles/home.css';
+import '../styles/main.css';
 import Header from '../components/Header.astro';
 import FeaturedArticle from '../components/FeaturedArticle.astro';
 import Categories from '../components/Categories.astro';
@@ -18,7 +18,7 @@ const {title = "Riana's Blog"} = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<!-- <slot /> -->
+		<slot />
 		 <Header />
         <div class="sub-header">A deep dive into the projects I've built, the tools I love, and all the things that inspire me.</div>
         <FeaturedArticle />
