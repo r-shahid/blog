@@ -16,3 +16,5 @@ The way to access the formatting menu is by typing a slash, similar to notion. T
 
 I wonder if there's a way to make the Topic section be a dropdown where I choose from a list of categories. I imagine that instead of giving the topic field a type of text, there could be a selection feature. That'll be really good because then I can choose the category from a predetermined list instead of typing it every time. Takes away errors caused by typos leading to duplicate categories.
 
+I'd also like to fix the date formatting so it looks normal. month day and year :)
+
