@@ -10,7 +10,7 @@ content:
     path: src/content/blog
     filename: '{fields.title}.md'
     view:
-      fields: [heroImage, title, pubDate]
+      fields: [heroImage, title, topic, pubDate]
     fields:
       - name: title
         label: Title
