@@ -23,21 +23,21 @@ const {topic, posts} = Astro.props;
 	<body>
 		<Header />
 		<div class="all-posts">
-		<h2>Posts</h2>
+		<h2>{topic}</h2>
 		{posts.length === 0 ? (
         <p>No posts found.</p>
       ) : (
         <ul class="posts-list">
-          {posts.map((post) => (
+          {posts.map((post: { id: any; data: { heroImage: string; title: string; pubDate: string | number | Date; description: string; imgAlt: string; }; }) => (
             <li class="post-item">
               <a href={`/posts/${post.id}`}>
                 {post.data.heroImage && (
-                  <img src={post.data.heroImage} alt={post.data.title} width="150" />
+                  <img src={post.data.heroImage} alt={post.data.imgAlt} width="150" />
                 )}
                 <div class="post-details">
                   <h2>{post.data.title}</h2>
                   <p class="post-meta">
-                    <span class="topic">{post.data.topic}</span> — 
+                    {/* <span class="topic">{post.data.topic}</span> —  */}
                     <div>{new Date(post.data.pubDate).toLocaleDateString()}</div>
                   </p>
                   <p>{post.data.description}</p>
