@@ -1,6 +1,6 @@
 ---
 title: My First Post!
-topic: Coding
+topic: coding
 description: "This is the inaugural post for this site. "
 pubDate: 10/23/2026
 heroImage: /media/beach.jpg
