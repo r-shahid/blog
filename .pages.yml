@@ -22,8 +22,8 @@ content:
         type: select
         options:
           values:
-            - name: deepdives
-              label: Deep Dives
+            - name: deepdive
+              label: Deep Dive
             - name: hardware
               label: Hardware
             - name: css
