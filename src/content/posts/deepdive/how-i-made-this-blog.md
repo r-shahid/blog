@@ -1,6 +1,6 @@
 ---
 title: How I Made This Blog
-topic: deepdives
+topic: deepdive
 description: "This is a thorough break down of my process when making this blog website. "
 pubDate: 11/10/2026
 heroImage: /media/beach.jpg

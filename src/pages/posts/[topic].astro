@@ -1,0 +1,30 @@
+---
+import type { GetStaticPaths } from "astro";
+import '../../styles/style.css';
+import Topic from '../../layouts/Topic.astro';
+import { getCollection } from 'astro:content';
+const title = "Riana's Blog"
+
+export async function getStaticPaths() {
+    const allPosts = await getCollection('blog')
+    const topics = [
+        ...new Set(allPosts.map((post) => post.data.topic.toLowerCase().trim()))
+    ]
+    return topics.map((topic) => {
+        const filteredPosts = allPosts
+        .filter((post) => post.data.topic.toLowerCase().trim() === topic)
+        .sort((a,b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+
+        return {
+            params: { topic },
+            props: {posts: filteredPosts}
+        }
+    });
+};
+
+const {topic} = Astro.params;
+const {posts} = Astro.props;
+---
+<!-- <Header />   -->
+<Topic topic={topic} posts={posts} />
+<!-- <Footer /> -->
