@@ -16,7 +16,7 @@ const {title, topic, description, pubDate, heroImage, imgAlt} = frontmatter;
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Post Title</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<!-- <slot /> -->
@@ -26,7 +26,8 @@ const {title, topic, description, pubDate, heroImage, imgAlt} = frontmatter;
             <img src={heroImage} alt={imgAlt}/>
              <h2 class="post-title">{title}</h2>
          </div>
-         <div>{pubDate}</div>
+         <!-- <div>{pubDate}</div> -->
+          <time datetime={pubDate}>{new Date(pubDate).toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})}</time>
          <div class="category"><button >{topic}</button></div>
          <div class="post-body">
             <slot />

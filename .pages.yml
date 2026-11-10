@@ -8,7 +8,7 @@ content:
     label: Posts
     type: collection
     path: src/content/blog
-    filename: '{fields.title}-{month}-{day}-{year}.md'
+    filename: '{fields.title}.md'
     view:
       fields: [heroImage, title, pubDate]
     fields:

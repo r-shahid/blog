@@ -1,11 +1,20 @@
 ---
 import '../styles/main.css';
+import { getCollection } from 'astro:content';
 import Header from '../components/Header.astro';
 import FeaturedArticle from '../components/FeaturedArticle.astro';
 import Categories from '../components/Categories.astro';
 import RecentPosts from '../components/RecentPosts.astro';
 import Footer from '../components/Footer.astro';
 const {title = "Riana's Blog"} = Astro.props;
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => 
+  new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
+
+const featuredPost = sortedPosts[0];
+const recentPosts = sortedPosts.slice(0, 3);
 ---
 
 <html lang="en">
@@ -21,9 +30,9 @@ const {title = "Riana's Blog"} = Astro.props;
 		<slot />
 		 <Header />
         <div class="sub-header">A deep dive into the projects I've built, the tools I love, and all the things that inspire me.</div>
-        <FeaturedArticle />
+        {featuredPost && <FeaturedArticle post={featuredPost} />}
 	 	<Categories />
-	   	<RecentPosts />
+	   	{recentPosts.length > 0 && <RecentPosts posts={recentPosts} />}
 		<div class="all-posts">
 			<a href="/posts/all"><button>all posts</button></a>
 		</div>
