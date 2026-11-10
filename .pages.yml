@@ -18,7 +18,17 @@ content:
 
       - name: topic
         label: Topic
-        type: text
+        type: select
+        options:
+          values:
+            - name: deepdives
+              label: Deep Dives
+            - name: hardware
+              label: Hardware
+            - name: css
+              label: CSS
+            - name: coding
+              label: Coding
 
       - name: description
         label: Description
