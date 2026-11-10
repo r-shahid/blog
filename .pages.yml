@@ -7,8 +7,9 @@ content:
   - name: posts
     label: Posts
     type: collection
-    path: src/content/blog
-    filename: '{fields.title}.md'
+    path: src/content/posts
+    subfolders: true
+    filename: '{fields.topic}/{fields.title}.md'
     view:
       fields: [heroImage, title, topic, pubDate]
     fields:
